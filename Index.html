@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abdul Nassib Macapato - IT Student & Developer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #004d7a;
+            --secondary: #2c9fd1;
+            --accent: #ff7e30;
+            --light: #f8fafc;
+            --dark: #1e293b;
+            --gray: #64748b;
+            --light-gray: #e2e8f0;
+            --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --transition: all 0.3s ease;
+        }
+        
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            animation: fadeIn 0.8s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 50px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            transform: translate(30%, -30%);
+        }
+        
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            left: -50px;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+        
+        .title {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            opacity: 0.95;
+            font-weight: 400;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin-top: 25px;
+        }
+        
+        .contact-info span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 8px 16px;
+            border-radius: 50px;
+            backdrop-filter: blur(5px);
+            transition: var(--transition);
+        }
+        
+        .contact-info span:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-3px);
+        }
+        
+        .content {
+            display: flex;
+            padding: 40px;
+            gap: 40px;
+        }
+        
+        .left-column {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        
+        .right-column {
+            flex: 2;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        
+        section {
+            padding: 25px;
+            border-radius: 12px;
+            background: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border-left: 4px solid var(--primary);
+            transition: var(--transition);
+        }
+        
+        section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+        }
+        
+        h2 {
+            color: var(--primary);
+            font-size: 1.5rem;
+            padding-bottom: 12px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--light-gray);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        h2 i {
+            color: var(--accent);
+        }
+        
+        h3 {
+            color: var(--dark);
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .job {
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed var(--light-gray);
+            position: relative;
+        }
+        
+        .job:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+        
+        .date {
+            color: var(--accent);
+            font-size: 0.9rem;
+            font-weight: 600;
+            background: rgba(255, 126, 48, 0.1);
+            padding: 4px 12px;
+            border-radius: 50px;
+        }
+        
+        .company {
+            color: var(--secondary);
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .company i {
+            font-size: 0.9rem;
+        }
+        
+        ul {
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 5px;
+        }
+        
+        li::marker {
+            color: var(--accent);
+        }
+        
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .skill-tag {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: var(--transition);
+            display: inline-block;
+        }
+        
+        .skill-tag:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 10px rgba(0, 77, 122, 0.2);
+        }
+        
+        .profile-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .profile-img-container {
+            position: relative;
+            margin-bottom: 20px;
+        }
+        
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .profile-img:hover {
+            transform: scale(1.05);
+        }
+        
+        .profile-img-container::after {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            z-index: -1;
+            animation: rotate 10s linear infinite;
+        }
+        
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .personal-details {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+        }
+        
+        .detail-item {
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        
+        .detail-label {
+            font-weight: 600;
+            color: var(--dark);
+        }
+        
+        .detail-value {
+            color: var(--gray);
+        }
+        
+        .education-item {
+            margin-top: 15px;
+        }
+        
+        .education-item p {
+            color: var(--gray);
+            margin-top: 5px;
+        }
+        
+        .highlight {
+            color: var(--accent);
+            font-weight: 600;
+        }
+        
+        .divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--light-gray), transparent);
+            margin: 30px 0;
+        }
+        
+        .print-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            box-shadow: 0 5px 15px rgba(0, 77, 122, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: var(--transition);
+            z-index: 100;
+        }
+        
+        .print-btn:hover {
+            background: var(--secondary);
+            transform: translateY(-5px);
+        }
+        
+        @media (max-width: 992px) {
+            .content {
+                flex-direction: column;
+                padding: 30px;
+                gap: 30px;
+            }
+            
+            .left-column, .right-column {
+                width: 100%;
+            }
+            
+            header {
+                padding: 40px 20px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .contact-info {
+                gap: 15px;
+            }
+            
+            .contact-info span {
+                padding: 6px 12px;
+                font-size: 0.9rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            section {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .job-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            
+            .date {
+                align-self: flex-start;
+            }
+            
+            .print-btn {
+                bottom: 20px;
+                right: 20px;
+                padding: 10px 16px;
+                font-size: 0.9rem;
+            }
+        }
+        
+        @media print {
+            .print-btn {
+                display: none;
+            }
+            
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .container {
+                box-shadow: none;
+                border-radius: 0;
+            }
+            
+            section:hover {
+                transform: none;
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <h1>MACAPATO, ABDUL NASSIB T.</h1>
+                <div class="title">IT Student & Aspiring Full Stack Developer</div>
+                <div class="contact-info">
+                    <span><i class="fas fa-phone"></i> +639381413527</span>
+                    <span><i class="fas fa-envelope"></i> AbdulnassibMaca6@gmail.com</span>
+                    <span><i class="fas fa-map-marker-alt"></i> Silang, Cavite</span>
+                </div>
+            </div>
+        </header>
+        
+        <div class="content">
+            <div class="left-column">
+                <section class="profile-section">
+                    <div class="profile-img-container">
+                        <img src="https://scontent.fdvo1-1.fna.fbcdn.net/v/t39.30808-6/594157865_846950497929396_125415537791577408_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=108&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeH0_RfQoOWl4mO9QS0CoYOghxdKftnFk7-HF0p-2cWTv5z7Vpei4GI9-TIYBvp9pSCNY56oquhQjZV0HLGqRWGW&_nc_ohc=_CZt4n21o30Q7kNvwEcWIt8&_nc_oc=Adl9MI3VIeKQE-rXWp-_qceq-pu85g0ki3wjUpug_4MYHkietskm7Vxkx43S5Cfr5mQ&_nc_zt=23&_nc_ht=scontent.fdvo1-1.fna&_nc_gid=86fYXWhU_xvnJ0_uqhzwew&oh=00_AfoeVjCfdmwVYQZJCMIreGqqiRwTcQkB5BJmi8wPeKzZPA&oe=69654C67" 
+                             alt="Abdul Nassib Macapato" 
+                             class="profile-img"
+                             onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Abdul+Nassib&background=004d7a&color=fff&size=200&bold=true'">
+                    </div>
+                    <h3>IT Student & Developer</h3>
+                    <p>Passionate about technology and creating innovative solutions</p>
+                </section>
+                
+                <section>
+                    <h2><i class="fas fa-user-circle"></i> Personal Details</h2>
+                    <div class="personal-details">
+                        <div class="detail-item">
+                            <span class="detail-label">Age:</span>
+                            <span class="detail-value">24 years old</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Height/Weight:</span>
+                            <span class="detail-value">173cm / 75kg</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Status:</span>
+                            <span class="detail-value">IT Student</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Nationality:</span>
+                            <span class="detail-value">Filipino</span>
+                        </div>
+                    </div>
+                </section>
+                
+                <section>
+                    <h2><i class="fas fa-cogs"></i> Skills</h2>
+                    <div class="skills">
+                        <span class="skill-tag">Hardware Support</span>
+                        <span class="skill-tag">Networking</span>
+                        <span class="skill-tag">Communication</span>
+                        <span class="skill-tag">Leadership</span>
+                        <span class="skill-tag">Critical Thinking</span>
+                        <span class="skill-tag">Problem Solving</span>
+                        <span class="skill-tag">Team Collaboration</span>
+                        <span class="skill-tag">Technical Support</span>
+                        <span class="skill-tag">Customer Service</span>
+                        <span class="skill-tag">Financial Management</span>
+                        <span class="skill-tag">Inventory Management</span>
+                    </div>
+                </section>
+                
+                <section>
+                    <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+                    <div class="education-item">
+                        <h3>Bachelor of Science in Information Technology</h3>
+                        <p>Currently Enrolled</p>
+                        <p><span class="highlight">Focus:</span> Full Stack Development & Networking</p>
+                    </div>
+                </section>
+            </div>
+            
+            <div class="right-column">
+                <section>
+                    <h2><i class="fas fa-user"></i> About Me</h2>
+                    <p>Dedicated and hardworking IT student with advanced computer literacy skills and strong aptitude for learning new technologies. Passionate about creating efficient solutions and expanding technical knowledge in both hardware and software domains.</p>
+                    <div class="divider"></div>
+                    <p>Combines practical work experience in customer-facing roles with technical IT education to bring a unique perspective to problem-solving and team collaboration.</p>
+                </section>
+                
+                <section>
+                    <h2><i class="fas fa-briefcase"></i> Work Experience</h2>
+                    
+                    <div class="job">
+                        <div class="job-header">
+                            <h3>Service Crew</h3>
+                            <span class="date">2023 - 2024</span>
+                        </div>
+                        <div class="company"><i class="fas fa-utensils"></i> Sea Food Kart, Marawi City</div>
+                        <ul>
+                            <li>Managed daily financial activities and cash handling with precision</li>
+                            <li>Ensured high-quality customer service and satisfaction through attentive service</li>
+                            <li>Maintained inventory and organized stock efficiently to minimize waste</li>
+                            <li>Collaborated with team members to ensure smooth operations during peak hours</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="job">
+                        <div class="job-header">
+                            <h3>Gas Station Cashier</h3>
+                            <span class="date">2018 - 2020</span>
+                        </div>
+                        <div class="company"><i class="fas fa-gas-pump"></i> Shell Gas Station, Marawi City</div>
+                        <ul>
+                            <li>Processed transactions with accuracy and speed in a fast-paced environment</li>
+                            <li>Managed fuel purchases and inventory tracking using point-of-sale systems</li>
+                            <li>Provided excellent customer service to daily clients, building repeat business</li>
+                            <li>Handled financial reconciliations at shift end with 100% accuracy record</li>
+                            <li>Trained new employees on cash handling procedures and safety protocols</li>
+                        </ul>
+                    </div>
+                </section>
+                
+                <section>
+                    <h2><i class="fas fa-bullseye"></i> Career Objective</h2>
+                    <p>Seeking an opportunity to apply my technical skills and knowledge in a challenging IT role where I can contribute to organizational success while continuing to develop professionally in the field of information technology.</p>
+                    <div class="divider"></div>
+                    <p><span class="highlight">Interested in roles involving:</span> technical support, network administration, junior development positions, IT helpdesk, or system administration.</p>
+                    <div class="divider"></div>
+                    <p>Eager to leverage my customer service experience and technical education to provide exceptional support and contribute to team success in a technology-driven environment.</p>
+                </section>
+            </div>
+        </div>
+    </div>
+    
+    <button class="print-btn" onclick="window.print()">
+        <i class="fas fa-print"></i> Print Resume
+    </button>
+
+    <script>
+        // Add simple animation for skill tags on hover
+        document.querySelectorAll('.skill-tag').forEach(tag => {
+            tag.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)';
+            });
+            
+            tag.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+        
+        // Add animation for section headers
+        document.querySelectorAll('h2').forEach(header => {
+            header.addEventListener('mouseenter', function() {
+                this.style.borderBottomColor = 'var(--accent)';
+            });
+            
+            header.addEventListener('mouseleave', function() {
+                this.style.borderBottomColor = 'var(--light-gray)';
+            });
+        });
+        
+        // Add subtle animation to the profile image border
+        const profileImgContainer = document.querySelector('.profile-img-container');
+        if (profileImgContainer) {
+            profileImgContainer.addEventListener('mouseenter', function() {
+                this.style.animationPlayState = 'paused';
+            });
+            
+            profileImgContainer.addEventListener('mouseleave', function() {
+                this.style.animationPlayState = 'running';
+            });
+        }
+        
+        // Make contact info items clickable (for copying)
+        document.querySelectorAll('.contact-info span').forEach(item => {
+            item.style.cursor = 'pointer';
+            item.title = 'Click to copy';
+            
+            item.addEventListener('click', function() {
+                const text = this.innerText.replace(/[^\d+\s@.a-zA-Z,]/g, '').trim();
+                navigator.clipboard.writeText(text).then(() => {
+                    const original = this.innerHTML;
+                    this.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                    setTimeout(() => {
+                        this.innerHTML = original;
+                    }, 1500);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
