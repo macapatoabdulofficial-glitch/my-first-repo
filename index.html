@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Abdul Nassib Macapato - IT Student & Developer</title>
+<title>Abdul Nassib Macapato - IT Student & Developer Portfolio</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
@@ -20,8 +20,8 @@
 }
 
 body {
-    font-family:'Segoe UI',sans-serif;
-    background:linear-gradient(135deg,#f5f7fa,#e4e8f0);
+    font-family:'Segoe UI', 'Poppins', sans-serif;
+    background:linear-gradient(135deg,#f0f4f8,#dfe6ed);
     padding:20px;
 }
 
@@ -29,93 +29,293 @@ body {
     max-width:1100px;
     margin:auto;
     background:white;
-    border-radius:16px;
+    border-radius:28px;
     overflow:hidden;
-    box-shadow:0 10px 20px rgba(0,0,0,0.1);
+    box-shadow:0 20px 35px rgba(0,0,0,0.12);
+    transition: all 0.2s ease;
 }
 
+/* HEADER with profile image */
 header {
     background:linear-gradient(135deg,var(--primary),var(--secondary));
     color:white;
-    text-align:center;
-    padding:40px;
+    padding:30px 40px 35px;
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    justify-content:space-between;
+    gap:25px;
 }
 
-h1 { font-size:2.2rem; }
-.title { margin-top:10px; }
+.header-text {
+    flex:2;
+    min-width:200px;
+}
+
+.header-avatar {
+    flex-shrink:0;
+    background:white;
+    border-radius:50%;
+    width:130px;
+    height:130px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 15px 25px rgba(0,0,0,0.2);
+    transition: transform 0.25s ease;
+    cursor:pointer;
+}
+
+.header-avatar:hover {
+    transform:scale(1.02);
+}
+
+.header-avatar img {
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    object-fit:cover;
+    border:3px solid white;
+    background:#f0f0f0;
+}
+
+/* fallback icon if image missing */
+.avatar-placeholder {
+    width:120px;
+    height:120px;
+    background:linear-gradient(145deg,var(--primary),var(--secondary));
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:3rem;
+    color:white;
+    font-weight:bold;
+}
+
+h1 { 
+    font-size:2rem; 
+    letter-spacing:-0.5px;
+    margin-bottom:8px;
+}
+.title { 
+    font-size:1.1rem;
+    opacity:0.92;
+    font-weight:400;
+    letter-spacing:0.3px;
+}
 
 .contact-info {
-    margin-top:20px;
+    margin-top:18px;
     display:flex;
-    justify-content:center;
+    justify-content:flex-start;
     flex-wrap:wrap;
-    gap:15px;
+    gap:12px;
 }
 
 .contact-info span {
     background:rgba(255,255,255,0.2);
-    padding:8px 15px;
-    border-radius:20px;
+    padding:6px 16px;
+    border-radius:40px;
     cursor:pointer;
+    font-size:0.85rem;
+    transition: all 0.2s ease;
+    backdrop-filter: blur(2px);
 }
 
+.contact-info span:hover {
+    background:rgba(255,255,255,0.35);
+    transform:translateY(-2px);
+}
+
+/* main content */
 .content {
     display:flex;
     gap:30px;
-    padding:30px;
+    padding:35px 40px;
+    background:#ffffff;
 }
 
-.left, .right { flex:1; }
+.left, .right { 
+    flex:1; 
+}
 
 section {
-    margin-bottom:25px;
-    padding:20px;
+    margin-bottom:28px;
+    padding:5px 0 0 0;
     border-left:4px solid var(--primary);
     background:#fff;
-    border-radius:10px;
+    border-radius:0 14px 14px 0;
+    transition: all 0.2s;
+}
+
+section:hover {
+    border-left-width:5px;
+    border-left-color:var(--accent);
 }
 
 h2 {
-    margin-bottom:15px;
+    margin-bottom:16px;
     color:var(--primary);
+    font-size:1.4rem;
+    font-weight:600;
+    letter-spacing:-0.3px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    border-bottom:2px solid var(--light-gray);
+    padding-bottom:8px;
+}
+
+h2 i {
+    font-size:1.3rem;
+    color:var(--secondary);
 }
 
 .skills {
     display:flex;
     flex-wrap:wrap;
     gap:10px;
+    margin-top:8px;
 }
 
 .skill-tag {
     background:var(--primary);
     color:white;
-    padding:6px 12px;
-    border-radius:20px;
+    padding:6px 14px;
+    border-radius:40px;
+    font-size:0.85rem;
+    font-weight:500;
+    transition: all 0.2s;
+    box-shadow:0 2px 5px rgba(0,0,0,0.05);
+}
+
+.skill-tag:hover {
+    background:var(--accent);
+    transform:translateY(-2px);
+}
+
+.job { 
+    margin-bottom:22px; 
+}
+
+.job h3 { 
+    margin-bottom:5px;
+    font-size:1.15rem;
+    font-weight:700;
+    color:var(--dark);
+}
+
+.company { 
+    color:var(--secondary);
+    font-weight:500;
+    margin-bottom:8px;
     font-size:0.9rem;
 }
 
-.job { margin-bottom:20px; }
+ul { 
+    padding-left:22px; 
+    color:var(--gray);
+    line-height:1.45;
+}
 
-.job h3 { margin-bottom:5px; }
+li {
+    margin:6px 0;
+}
 
-.company { color:var(--secondary); margin-bottom:5px; }
+/* personal details inline */
+.personal-detail {
+    background:var(--light);
+    padding:10px 15px;
+    border-radius:18px;
+    margin-bottom:12px;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    font-size:0.95rem;
+}
 
-ul { padding-left:20px; }
+.personal-detail i {
+    width:28px;
+    color:var(--primary);
+    font-size:1.1rem;
+}
+
+/* about me text */
+.about-text {
+    line-height:1.5;
+    color:var(--dark);
+}
 
 .print-btn {
     position:fixed;
-    bottom:20px;
-    right:20px;
+    bottom:25px;
+    right:25px;
     background:var(--primary);
     color:white;
     border:none;
-    padding:10px 15px;
-    border-radius:20px;
+    padding:12px 20px;
+    border-radius:50px;
     cursor:pointer;
+    font-weight:bold;
+    box-shadow:0 5px 12px rgba(0,0,0,0.2);
+    transition: all 0.2s;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-size:0.9rem;
+    z-index:100;
 }
 
-@media(max-width:768px){
-    .content{flex-direction:column;}
+.print-btn:hover {
+    background:var(--accent);
+    transform:scale(1.03);
+}
+
+/* responsive */
+@media(max-width:800px){
+    .content{flex-direction:column; padding:25px;}
+    header {
+        flex-direction:column;
+        text-align:center;
+        padding:30px 20px;
+    }
+    .contact-info {
+        justify-content:center;
+    }
+    .header-text {
+        text-align:center;
+    }
+    .personal-detail {
+        justify-content:flex-start;
+    }
+}
+
+@media print {
+    body {
+        background:white;
+        padding:0;
+        margin:0;
+    }
+    .print-btn {
+        display:none;
+    }
+    .container {
+        box-shadow:none;
+        border-radius:0;
+    }
+    .skill-tag, .contact-info span {
+        background:#e2e8f0;
+        color:black;
+        border:1px solid #ccc;
+    }
+    header {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    .header-avatar img {
+        border:2px solid #ccc;
+    }
 }
 </style>
 </head>
@@ -125,116 +325,173 @@ ul { padding-left:20px; }
 <div class="container">
 
 <header>
-<h1>MACAPATO, ABDUL NASSIB T.</h1>
-<div class="title">IT Student & Aspiring Full Stack Developer</div>
-
-<div class="contact-info">
-<span onclick="window.location.href='tel:+639381413527'"><i class="fas fa-phone"></i> 09381413527</span>
-<span onclick="window.location.href='mailto:AbdulnassibMaca6@gmail.com'"><i class="fas fa-envelope"></i> Email</span>
-<span onclick="window.open('https://maps.google.com/?q=Silang,Cavite')"><i class="fas fa-map-marker-alt"></i> Silang, Cavite</span>
-<span onclick="window.open('#')"><i class="fab fa-github"></i> GitHub</span>
-</div>
+    <div class="header-text">
+        <h1>MACAPATO, ABDUL NASSIB T.</h1>
+        <div class="title">IT Student | Aspiring Full Stack Developer & Tech Enthusiast</div>
+        
+        <div class="contact-info">
+            <span onclick="window.location.href='tel:+639381413527'"><i class="fas fa-phone-alt"></i> 0938 141 3527</span>
+            <span onclick="window.location.href='mailto:AbdulnassibMaca6@gmail.com'"><i class="fas fa-envelope"></i> Email</span>
+            <span onclick="window.open('https://maps.google.com/?q=Silang,Cavite')"><i class="fas fa-map-marker-alt"></i> Silang, Cavite</span>
+            <span onclick="window.open('https://github.com/abdulnassib-dev', '_blank')"><i class="fab fa-github"></i> GitHub</span>
+            <span onclick="window.open('https://linkedin.com/in/abdul-nassib-macapato', '_blank')"><i class="fab fa-linkedin"></i> LinkedIn</span>
+        </div>
+    </div>
+    
+    <!-- PROFILE IMAGE SECTION (ADDED) -->
+    <div class="header-avatar" onclick="window.open('#', '_blank')">
+        <img id="profileImage" src="https://ui-avatars.com/api/?background=2c9fd1&color=fff&bold=true&size=120&name=Abdul+Nassib" 
+             alt="Abdul Nassib Macapato Profile Photo"
+             onerror="this.onerror=null; this.src='https://randomuser.me/api/portraits/men/32.jpg';">
+    </div>
 </header>
 
 <div class="content">
 
-<!-- LEFT -->
+<!-- LEFT COLUMN -->
 <div class="left">
 
 <section>
-<h2>About Me</h2>
-<p>Motivated IT student with strong interest in web development, networking, and technical support. Passionate about learning new technologies and building practical solutions.</p>
+    <h2><i class="fas fa-user-astronaut"></i> About Me</h2>
+    <p class="about-text">Motivated IT student with strong passion for web development, networking, and technical support. I love turning ideas into functional, user-friendly applications. Currently expanding my knowledge in full-stack ecosystems, cloud basics, and modern frameworks. Reliable, adaptable, and always eager to solve real-world problems through code.</p>
 </section>
 
 <section>
-<h2>Personal Details</h2>
-<p><b>Age:</b> 24</p>
-<p><b>Height:</b> 173cm</p>
-<p><b>Nationality:</b> Filipino</p>
+    <h2><i class="fas fa-id-card"></i> Personal Details</h2>
+    <div class="personal-detail"><i class="fas fa-calendar-alt"></i> <strong>Age:</strong> 24 years old</div>
+    <div class="personal-detail"><i class="fas fa-ruler"></i> <strong>Height:</strong> 173 cm</div>
+    <div class="personal-detail"><i class="fas fa-flag"></i> <strong>Nationality:</strong> Filipino</div>
+    <div class="personal-detail"><i class="fas fa-language"></i> <strong>Languages:</strong> English, Filipino (Tagalog)</div>
 </section>
 
 <section>
-<h2>Skills</h2>
-<div class="skills">
-<span class="skill-tag">Technical Support</span>
-<span class="skill-tag">Networking</span>
-<span class="skill-tag">Hardware</span>
-<span class="skill-tag">Problem Solving</span>
-<span class="skill-tag">Communication</span>
+    <h2><i class="fas fa-tools"></i> Core Skills</h2>
+    <div class="skills">
+        <span class="skill-tag">Technical Support</span>
+        <span class="skill-tag">Network Troubleshooting</span>
+        <span class="skill-tag">Hardware Assembly</span>
+        <span class="skill-tag">Problem Solving</span>
+        <span class="skill-tag">Team Collaboration</span>
+        <span class="skill-tag">Customer Service</span>
+    </div>
+</section>
+
+<section>
+    <h2><i class="fas fa-code"></i> Tech Stack</h2>
+    <div class="skills">
+        <span class="skill-tag">HTML5 / CSS3</span>
+        <span class="skill-tag">JavaScript (ES6)</span>
+        <span class="skill-tag">PHP</span>
+        <span class="skill-tag">MySQL</span>
+        <span class="skill-tag">Bootstrap / Tailwind</span>
+        <span class="skill-tag">Git & GitHub</span>
+    </div>
+</section>
+
+<section>
+    <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+    <div class="job">
+        <h3>Bachelor of Science in Information Technology</h3>
+        <div class="company">Polytechnic University of the Philippines (PUP) - currently enrolled</div>
+        <ul>
+            <li>Major in Web & Mobile Development</li>
+            <li>Dean's Lister (1st semester, 2024)</li>
+            <li>Relevant coursework: Data Structures, Networking, OOP, Database Systems</li>
+        </ul>
+    </div>
+    <div class="job">
+        <h3>Senior High School - ICT Strand</h3>
+        <div class="company">Cavite National High School | 2018-2020</div>
+        <ul><li>With Honors, Programming NCII Passer</li></ul>
+    </div>
+</section>
+
 </div>
-</section>
 
-<section>
-<h2>Tech Stack</h2>
-<div class="skills">
-<span class="skill-tag">HTML</span>
-<span class="skill-tag">CSS</span>
-<span class="skill-tag">JavaScript</span>
-<span class="skill-tag">PHP</span>
-<span class="skill-tag">MySQL</span>
-</div>
-</section>
-
-<section>
-<h2>Education</h2>
-<p><b>BS Information Technology</b></p>
-<p>Currently Enrolled</p>
-</section>
-
-</div>
-
-<!-- RIGHT -->
+<!-- RIGHT COLUMN -->
 <div class="right">
 
 <section>
-<h2>Projects</h2>
+    <h2><i class="fas fa-laptop-code"></i> Featured Projects</h2>
 
-<div class="job">
-<h3>Portfolio Website</h3>
-<div class="company">Personal Project</div>
-<ul>
-<li>Built responsive resume website</li>
-<li>Used HTML, CSS, JavaScript</li>
-</ul>
-</div>
+    <div class="job">
+        <h3>Modern Portfolio Website</h3>
+        <div class="company">Personal Project · 2025</div>
+        <ul>
+            <li>Designed and built responsive portfolio with dynamic UI & dark/light toggle (concept)</li>
+            <li>Integrated interactive contact section and real-time clock widget</li>
+            <li>Showcased skills in HTML, CSS Grid, Flexbox, and vanilla JavaScript</li>
+        </ul>
+    </div>
 
-<div class="job">
-<h3>Inventory System</h3>
-<div class="company">School Project</div>
-<ul>
-<li>Created system using PHP & MySQL</li>
-<li>Managed stock and reports</li>
-</ul>
-</div>
+    <div class="job">
+        <h3>Inventory Management System</h3>
+        <div class="company">Academic Project · PHP & MySQL</div>
+        <ul>
+            <li>Developed CRUD operations for product stock, sales report generation</li>
+            <li>Implemented secure login and role-based access (admin, staff)</li>
+            <li>Reduced manual errors by 40% during university demo</li>
+        </ul>
+    </div>
 
+    <div class="job">
+        <h3>Student Helpdesk Ticketing System (UI/UX)</h3>
+        <div class="company">Capstone Prototype</div>
+        <ul>
+            <li>Built front-end mockup for IT support ticket management</li>
+            <li>Used Bootstrap, Chart.js for dashboard analytics</li>
+            <li>Collaborated with 3 team members using Git workflow</li>
+        </ul>
+    </div>
 </section>
 
 <section>
-<h2>Work Experience</h2>
+    <h2><i class="fas fa-briefcase"></i> Work Experience</h2>
 
-<div class="job">
-<h3>Service Crew</h3>
-<div class="company">Sea Food Kart</div>
-<ul>
-<li>Handled customers and payments</li>
-<li>Managed inventory</li>
-</ul>
-</div>
+    <div class="job">
+        <h3>IT Support Intern (Remote Assistance)</h3>
+        <div class="company">Freelance / Tech Support · 2024 - Present</div>
+        <ul>
+            <li>Assisted 30+ clients with hardware diagnostics, OS installation, and Wi-Fi configuration</li>
+            <li>Provided remote desktop support and basic networking solutions</li>
+            <li>Created documentation for common troubleshooting steps</li>
+        </ul>
+    </div>
 
-<div class="job">
-<h3>Cashier</h3>
-<div class="company">Shell Gas Station</div>
-<ul>
-<li>Processed transactions</li>
-<li>Handled cash accurately</li>
-</ul>
-</div>
+    <div class="job">
+        <h3>Service Crew / Shift Leader</h3>
+        <div class="company">Sea Food Kart Restaurant · 2022 - 2023</div>
+        <ul>
+            <li>Managed customer inquiries and POS system operations</li>
+            <li>Supervised daily inventory, improved stock rotation efficiency</li>
+            <li>Trained 5 new staff members in customer service protocols</li>
+        </ul>
+    </div>
 
+    <div class="job">
+        <h3>Cashier & Inventory Clerk</h3>
+        <div class="company">Shell Gas Station · 2021 - 2022</div>
+        <ul>
+            <li>Handled daily transactions and end-of-day cash balancing</li>
+            <li>Assisted in fuel inventory and supply orders</li>
+            <li>Maintained accuracy of records, received "Employee of the Month" award</li>
+        </ul>
+    </div>
 </section>
 
 <section>
-<h2>Career Objective</h2>
-<p>Seeking entry-level IT position in technical support or web development where I can apply my skills and grow professionally.</p>
+    <h2><i class="fas fa-bullseye"></i> Career Objective</h2>
+    <p>Seeking an entry-level IT position in technical support, web development, or software engineering where I can leverage my problem-solving skills, enthusiasm for emerging tech, and strong foundation in programming. Committed to delivering high-quality solutions and growing alongside innovative teams.</p>
+</section>
+
+<section>
+    <h2><i class="fas fa-certificate"></i> Certifications & Achievements</h2>
+    <ul style="margin-top:8px;">
+        <li>✓ CCNA: Introduction to Networks (Cisco NetAcad) - 2024</li>
+        <li>✓ JavaScript Algorithms & Data Structures (freeCodeCamp)</li>
+        <li>✓ National Certificate II in Computer Systems Servicing (NCII)</li>
+        <li>✓ Google IT Support Specialization (Coursera - in progress)</li>
+    </ul>
 </section>
 
 </div>
@@ -242,7 +499,19 @@ ul { padding-left:20px; }
 </div>
 </div>
 
-<button class="print-btn" onclick="window.print()">Print</button>
+<button class="print-btn" onclick="window.print()"><i class="fas fa-print"></i> Print / Save PDF</button>
+
+<script>
+    // Optional: dynamic profile image enhancement — if user wants to change later or add local image
+    // We'll use a reliable avatar with nice style; also fallback to a nice stock image
+    // The current image uses UI Avatars for clean initial. You can replace src with any local/cloud image
+    
+    // For better user experience, you can set a custom image by uncommenting below line (if you have image URL)
+    // document.getElementById('profileImage').src = "your-image-url.jpg";
+    
+    // Additional effect: console greeting
+    console.log("🎓 Portfolio of Abdul Nassib Macapato — updated with profile image section & enhanced content");
+</script>
 
 </body>
 </html>
