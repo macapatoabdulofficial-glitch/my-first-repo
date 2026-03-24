@@ -1,95 +1,135 @@
-/* Custom Variables */
+/* ===============================
+   ROOT VARIABLES (Modern Palette)
+================================= */
 :root {
-    --primary: #004d7a;
-    --secondary: #00c6ff;
-    --accent: #f1c40f;
-    --bg: #f8f9fa;
-    --card-bg: #ffffff;
-    --text: #2c3e50;
-    --sidebar: #0d2b45;
+    --primary: #2563eb;
+    --secondary: #22d3ee;
+    --accent: #facc15;
+
+    --bg: #f1f5f9;
+    --card-bg: rgba(255, 255, 255, 0.7);
+    --text: #0f172a;
+
+    --sidebar: #0f172a;
+    --border: rgba(0,0,0,0.08);
+
+    --radius: 16px;
+    --blur: blur(12px);
 }
 
-/* Dark Mode Overrides */
+/* DARK MODE */
 .dark-mode {
-    --bg: #121212;
-    --card-bg: #1e1e1e;
-    --text: #e0e0e0;
-    --primary: #00c6ff;
+    --bg: #020617;
+    --card-bg: rgba(15, 23, 42, 0.6);
+    --text: #e2e8f0;
+    --primary: #38bdf8;
+    --border: rgba(255,255,255,0.08);
 }
 
+/* ===============================
+   GLOBAL STYLES
+================================= */
 body {
-    background-color: var(--bg);
+    background: linear-gradient(to bottom right, var(--bg), #e2e8f0);
     color: var(--text);
-    font-family: 'Segoe UI', system-ui, sans-serif;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
     margin: 0;
-    transition: all 0.4s ease;
+    transition: all 0.3s ease;
 }
 
-/* Floating Toggle Button */
+/* ===============================
+   THEME TOGGLE BUTTON
+================================= */
 #theme-toggle {
     position: fixed;
     top: 20px;
     right: 20px;
-    z-index: 1000;
-    padding: 10px 15px;
-    border-radius: 20px;
+    z-index: 999;
+    padding: 10px 16px;
+    border-radius: 50px;
     border: none;
-    background: var(--primary);
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
     color: white;
     cursor: pointer;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    font-size: 0.9rem;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+    transition: 0.3s;
 }
 
-/* Hero Header with Animated Gradient */
+#theme-toggle:hover {
+    transform: scale(1.05);
+}
+
+/* ===============================
+   HERO SECTION
+================================= */
 .hero-header {
-    background: linear-gradient(-45deg, #004d7a, #00c6ff, #002a45);
-    background-size: 400% 400%;
-    animation: gradientBG 15s ease infinite;
+    background: linear-gradient(-45deg, #1e3a8a, #2563eb, #06b6d4, #0ea5e9);
+    background-size: 300% 300%;
+    animation: gradientBG 12s ease infinite;
     color: white;
-    padding: 80px 20px;
+    padding: 100px 20px;
     text-align: center;
 }
 
+.hero-header h1 {
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+}
+
+.hero-header p {
+    opacity: 0.9;
+}
+
+/* Animated Gradient */
 @keyframes gradientBG {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
 
-/* Badge Styling */
+/* ===============================
+   BADGES
+================================= */
 .badge {
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(5px);
-    padding: 5px 15px;
-    border-radius: 20px;
-    margin: 5px;
-    font-size: 0.8rem;
-    border: 1px solid rgba(255,255,255,0.3);
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: var(--blur);
+    padding: 6px 14px;
+    border-radius: 50px;
+    margin: 6px;
+    font-size: 0.75rem;
+    border: 1px solid rgba(255,255,255,0.25);
 }
 
-/* Container & Layout */
+/* ===============================
+   MAIN CONTAINER
+================================= */
 .container {
     display: flex;
-    max-width: 1200px;
-    margin: -50px auto 50px;
-    border-radius: 20px;
+    max-width: 1100px;
+    margin: -60px auto 60px;
+    border-radius: var(--radius);
     overflow: hidden;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    box-shadow: 0 25px 60px rgba(0,0,0,0.15);
 }
 
-/* Sidebar with Glass Effect */
+/* ===============================
+   SIDEBAR
+================================= */
 .sidebar {
     flex: 1;
-    background: var(--sidebar);
+    background: linear-gradient(180deg, #020617, #0f172a);
     color: white;
     padding: 40px 30px;
+    text-align: center;
 }
 
+/* Profile Image */
 .image-border {
-    width: 170px;
-    height: 170px;
-    padding: 5px;
-    background: linear-gradient(to right, var(--secondary), var(--accent));
+    width: 160px;
+    height: 160px;
+    padding: 4px;
+    background: linear-gradient(135deg, var(--secondary), var(--accent));
     border-radius: 50%;
     margin: 0 auto 20px;
 }
@@ -102,36 +142,63 @@ body {
     background: white;
 }
 
-/* Main Content Cards */
+/* ===============================
+   MAIN CONTENT
+================================= */
 .main-content {
     flex: 2.5;
     background: var(--card-bg);
-    padding: 60px;
+    backdrop-filter: var(--blur);
+    padding: 50px;
 }
 
+/* ===============================
+   JOB CARDS (MODERN GLASS STYLE)
+================================= */
 .job-card {
-    background: var(--bg);
-    padding: 20px;
-    border-radius: 12px;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    padding: 22px;
+    border-radius: var(--radius);
     margin-bottom: 20px;
-    border-left: 5px solid var(--primary);
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
+    backdrop-filter: var(--blur);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Gradient border effect */
+.job-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, var(--primary), transparent);
+    -webkit-mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
 }
 
 .job-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
 }
 
+/* Date Tag */
 .date-tag {
-    background: var(--primary);
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
     color: white;
-    padding: 3px 10px;
-    border-radius: 5px;
-    font-size: 0.8rem;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 0.75rem;
 }
 
-/* Skill Cloud */
+/* ===============================
+   SKILL CLOUD
+================================= */
 .skill-cloud {
     display: flex;
     flex-wrap: wrap;
@@ -139,30 +206,45 @@ body {
 }
 
 .skill-cloud span {
-    background: rgba(255,255,255,0.1);
-    padding: 8px 12px;
-    border-radius: 8px;
-    font-size: 0.85rem;
+    background: rgba(0,0,0,0.05);
+    padding: 8px 14px;
+    border-radius: 50px;
+    font-size: 0.8rem;
     transition: 0.3s;
 }
 
 .skill-cloud span:hover {
     background: var(--secondary);
-    color: var(--sidebar);
+    color: #020617;
+    transform: translateY(-2px);
 }
 
-/* Fade In Animation */
+/* ===============================
+   FADE ANIMATION
+================================= */
 .fade-in {
-    animation: fadeIn 1s ease forwards;
+    animation: fadeIn 0.8s ease forwards;
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
+    from { opacity: 0; transform: translateY(25px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Responsive Design */
+/* ===============================
+   RESPONSIVE DESIGN
+================================= */
 @media (max-width: 900px) {
-    .container { flex-direction: column; margin: 20px; }
-    .main-content { padding: 30px; }
+    .container {
+        flex-direction: column;
+        margin: 20px;
+    }
+
+    .main-content {
+        padding: 30px;
+    }
+
+    .hero-header h1 {
+        font-size: 2rem;
+    }
 }
